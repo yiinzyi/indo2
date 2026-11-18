@@ -1,0 +1,751 @@
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    background-color: #ffe0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f385b1;
+    text-decoration: none;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.nav-menu a:hover {
+    color: #D61627;
+}
+
+.cta-button a {
+    display: inline-block;
+    background-color: #D61627;
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .site-header {
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-menu ul {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* ========================================
+   DREAM PINK - ADD CASHIER PAGE
+======================================== */
+
+.add-cashier-page {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #ad376c;
+    background:
+        radial-gradient(ellipse at 10% 15%, #ffe3ee 0%, transparent 35%),
+        radial-gradient(ellipse at 90% 20%, #f9a9cc 0%, transparent 38%),
+        radial-gradient(ellipse at 15% 90%, #f8a6ca 0%, transparent 40%),
+        linear-gradient(135deg, #fff8fb, #ffd6e7, #fff0f6);
+    position: relative;
+}
+
+/* HEADER */
+
+.dream-header {
+    position: relative;
+    z-index: 10;
+    width: calc(100% - 52px);
+    min-height: 80px;
+    margin: 23px auto 0;
+    padding: 0 48px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 50px;
+    background: rgba(255,255,255,0.42);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 20px rgba(216, 92, 147, 0.12);
+}
+
+.dream-logo {
+    color: #c83f79;
+    font-family: Georgia, serif;
+    font-size: 29px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dream-logo span {
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.dream-nav {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.dream-nav a {
+    position: relative;
+    padding: 12px 0;
+    color: #a74a73;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.dream-nav a:hover,
+.dream-nav a.active {
+    color: #df3f83;
+}
+
+.dream-nav a.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #e85b98;
+    border-radius: 10px;
+    bottom: 0;
+    left: 0;
+}
+
+.dream-login {
+    padding: 12px 29px;
+    border: 1px solid #ed91b9;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #f7b1ce, #e879a7);
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(215, 91, 145, 0.2);
+    white-space: nowrap;
+}
+
+/* MAIN BACKGROUND */
+
+.dream-main {
+    min-height: calc(100vh - 110px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 20px 70px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dream-main::before,
+.dream-main::after {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+.dream-main::before {
+    top: 50px;
+    left: -250px;
+    background: rgba(255,255,255,0.28);
+}
+
+.dream-main::after {
+    bottom: -100px;
+    right: -180px;
+    background: rgba(255,255,255,0.32);
+}
+
+/* DECORATIVE STARS */
+
+.dream-star {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    text-shadow: 0 0 12px #ed91b9;
+    pointer-events: none;
+}
+
+.star-one {
+    top: 16%;
+    left: 8%;
+    font-size: 48px;
+}
+
+.star-two {
+    top: 10%;
+    right: 12%;
+    font-size: 38px;
+}
+
+.star-three {
+    top: 50%;
+    left: 18%;
+    font-size: 55px;
+}
+
+.star-four {
+    top: 42%;
+    right: 9%;
+    font-size: 48px;
+}
+
+.star-five {
+    bottom: 10%;
+    left: 9%;
+    font-size: 43px;
+}
+
+.star-six {
+    bottom: 15%;
+    right: 17%;
+    font-size: 38px;
+}
+
+/* FORM CARD */
+
+.dream-form-card {
+    width: 100%;
+    max-width: 820px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+
+    padding: 70px 58px 45px;
+    border: 2px solid rgba(255, 153, 192, 0.8);
+    border-radius: 38px;
+
+    background: rgba(255, 250, 251, 0.88);
+    box-shadow:
+        0 15px 35px rgba(211, 93, 145, 0.17),
+        inset 0 0 30px rgba(255, 215, 230, 0.4);
+}
+
+.dream-form-card::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 2px solid #f7a5c5;
+    border-radius: 27px;
+    pointer-events: none;
+}
+
+.dream-form-card::after {
+    content: "✧";
+    position: absolute;
+    top: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 112px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid white;
+    background: linear-gradient(145deg, #f9bfd5, #e879a7);
+    color: white;
+    font-size: 65px;
+    box-shadow: 0 5px 20px rgba(211, 93, 145, 0.25);
+}
+
+.dream-emblem {
+    position: absolute;
+    z-index: 3;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 43px;
+}
+
+.dream-ornament {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #f18bb5;
+    font-size: 38px;
+    letter-spacing: 12px;
+    pointer-events: none;
+}
+
+.top-ornament {
+    top: 10px;
+}
+
+.bottom-ornament {
+    bottom: 0;
+}
+
+/* TITLE */
+
+.dream-form-card h1 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    text-align: center;
+    color: #a9376b;
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.dream-subtitle {
+    position: relative;
+    z-index: 2;
+    margin: 10px 0 18px;
+    text-align: center;
+    color: #c27698;
+    font-size: 23px;
+}
+
+.dream-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto 24px;
+    color: #e879a7;
+    font-size: 27px;
+}
+
+.dream-divider span {
+    width: 24%;
+    height: 2px;
+    background: #f4b2cc;
+}
+
+/* FORM INPUTS */
+
+.dream-form {
+    position: relative;
+    z-index: 2;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 27px;
+}
+
+.dream-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dream-field label {
+    color: #ae3970;
+    font-size: 22px;
+    font-weight: 650;
+}
+
+.dream-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 65px;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    border: 1.5px solid #edb4ca;
+    border-radius: 20px;
+    background: rgba(255, 248, 251, 0.8);
+    transition: 0.3s;
+}
+
+.dream-input:focus-within {
+    border-color: #e879a7;
+    box-shadow: 0 0 12px rgba(232, 121, 167, 0.2);
+    background: white;
+}
+
+.input-icon {
+    margin-right: 15px;
+    color: #d77fa3;
+    font-size: 29px;
+}
+
+.dream-input input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    color: #a9376b;
+    font-family: inherit;
+    font-size: 19px;
+}
+
+.dream-input input::placeholder {
+    color: #cb91aa;
+}
+
+/* SUBMIT BUTTON */
+
+.dream-submit {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    width: 88% !important;
+    min-height: 70px;
+    margin: 4px auto 0;
+    border: 2px solid #f28bb4;
+    border-radius: 50px;
+
+    background: linear-gradient(120deg, #f5a0c2, #e66c9e);
+    color: white;
+    font-family: inherit;
+    font-size: 23px;
+    font-weight: 650;
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(213, 91, 145, 0.25),
+        inset 0 2px 5px rgba(255,255,255,0.5);
+
+    transition: 0.3s;
+}
+
+.dream-submit:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(120deg, #ed85ae, #d9538c);
+    box-shadow: 0 10px 22px rgba(213, 91, 145, 0.32);
+}
+
+.button-plus {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.button-star {
+    font-size: 24px;
+    color: #fff3f8;
+}
+
+.bottom-divider {
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .dream-header {
+        padding: 15px 25px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .dream-nav {
+        gap: 20px;
+    }
+
+    .dream-nav a {
+        font-size: 16px;
+    }
+
+    .dream-form-card h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dream-header {
+        width: calc(100% - 24px);
+        margin-top: 12px;
+        border-radius: 22px;
+        justify-content: center;
+    }
+
+    .dream-logo {
+        font-size: 24px;
+    }
+
+    .dream-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .dream-nav a {
+        font-size: 14px;
+    }
+
+    .dream-main {
+        padding: 75px 12px 40px;
+    }
+
+    .dream-form-card {
+        padding: 65px 25px 35px;
+        border-radius: 27px;
+    }
+
+    .dream-form-card h1 {
+        font-size: 30px;
+    }
+
+    .dream-subtitle {
+        font-size: 16px;
+    }
+
+    .dream-field label {
+        font-size: 17px;
+    }
+
+    .dream-input {
+        min-height: 56px;
+        border-radius: 14px;
+    }
+
+    .dream-input input {
+        font-size: 14px;
+    }
+
+    .dream-submit {
+        width: 100% !important;
+        min-height: 58px;
+        font-size: 17px;
+    }
+
+    .dream-emblem {
+        font-size: 35px;
+    }
+}
+
+
+/* ========================================
+   HALAMAN DAFTAR KASIR
+======================================== */
+
+.dream-main {
+    display: block !important;
+    width: 100%;
+    min-height: 100vh;
+    padding: 55px 20px 70px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CONTAINER 1: JUDUL */
+
+.list-title-card {
+    display: block !important;
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 750px;
+    min-height: 250px;
+    margin: 0 auto 35px;
+    padding: 65px 25px 35px;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(255, 250, 251, 0.9);
+    border: 2px solid #ffd1e2;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(220, 100, 150, 0.15);
+}
+
+.list-title-card .dream-emblem {
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.list-title-card h1 {
+    margin: 15px 0;
+    color: #b83d79;
+    font-family: Georgia, serif;
+    font-size: 38px;
+    text-align: center;
+}
+
+.list-title-card .dream-subtitle {
+    margin: 10px 0;
+    color: #d477a3;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* CONTAINER 2: TABEL */
+
+.list-table-card {
+    display: block !important;
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background: rgba(255, 250, 251, 0.92);
+    border: 2px solid #ffd1e2;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(220, 100, 150, 0.15);
+}
+
+/* HEADER TABEL */
+
+.list-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.list-table-header h2 {
+    margin: 0;
+    color: #b83d79;
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+/* TOMBOL ADD */
+
+.btn-add {
+    display: inline-block;
+    padding: 11px 22px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #f49ac2, #dc5798);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(220, 87, 152, 0.2);
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    transform: translateY(-3px);
+}
+
+/* TABEL */
+
+.list-table-card .table-container {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.list-table-card .styled-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.list-table-card .styled-table thead tr {
+    background: linear-gradient(135deg, #ed91b9, #d34f91);
+    color: white;
+}
+
+.list-table-card .styled-table th,
+.list-table-card .styled-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.list-table-card .styled-table tbody tr {
+    background: #fff8fb;
+    border-bottom: 1px solid #f8d5e4;
+}
+
+.list-table-card .styled-table tbody tr:nth-child(even) {
+    background: #fff0f6;
+}
+
+.list-table-card .styled-table tbody tr:hover {
+    background: #ffe2ee;
+}
+
+/* TOMBOL EDIT */
+
+.list-table-card .btn-warning {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #e978aa;
+    color: white;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .list-title-card,
+    .list-table-card {
+        width: 100%;
+    }
+
+    .list-title-card h1 {
+        font-size: 28px;
+    }
+
+    .list-table-card {
+        padding: 18px;
+    }
+
+    .list-table-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
