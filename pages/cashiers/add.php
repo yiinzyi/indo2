@@ -27,27 +27,30 @@ require_once ROOTPATH . '/config/config.php';
     <header class="dream-header">
 
         <a href="/indo/index.php" class="dream-logo">
-            <span>🛒</span> Indomaret
+            <span></span> Indomaret
         </a>
 
         <nav class="dream-nav">
 
-            <a href="/indo/index.php">
-                Beranda
+            <a href="/indo/pages/dashboard.php">
+                Dashboard
             </a>
 
             <a href="/indo/pages/products/list.php">
-                Produk
+                Product
             </a>
 
             <a href="/indo/pages/cashiers/list.php" class="active">
-                Kasir
+                Cashier
             </a>
 
-            <a href="/indo/pages/reports/index.php">
-                Laporan
+            <a href="/indo/pages/donations/list.php">
+                Donation
             </a>
 
+            <a href="/indo/pages/transactions/list.php">
+                Transaction
+            </a>
         </nav>
 
         <a href="#" class="dream-login">

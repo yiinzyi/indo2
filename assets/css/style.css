@@ -1,5 +1,6 @@
+
 /* ========================================
-   HEADER
+   1. GENERAL HEADER
 ======================================== */
 
 .site-header {
@@ -40,78 +41,64 @@
 
 .cta-button a {
     display: inline-block;
+    padding: 10px 24px;
+    border-radius: 6px;
     background-color: #D61627;
     color: white;
     text-decoration: none;
-    padding: 10px 24px;
-    border-radius: 6px;
     font-weight: 600;
 }
 
-@media (max-width: 900px) {
-    .site-header {
-        padding: 14px 20px;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .nav-menu ul {
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 600px) {
-    .site-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 12px;
-    }
-}
 
 /* ========================================
-   DREAM PINK - ADD CASHIER PAGE
+   2. ADD CASHIER PAGE - BACKGROUND
 ======================================== */
 
 .add-cashier-page {
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden;
+    position: relative;
+
     font-family: 'Segoe UI', Tahoma, sans-serif;
     color: #ad376c;
+
     background:
         radial-gradient(ellipse at 10% 15%, #ffe3ee 0%, transparent 35%),
         radial-gradient(ellipse at 90% 20%, #f9a9cc 0%, transparent 38%),
         radial-gradient(ellipse at 15% 90%, #f8a6ca 0%, transparent 40%),
         linear-gradient(135deg, #fff8fb, #ffd6e7, #fff0f6);
-    position: relative;
 }
 
-/* HEADER */
+
+/* ========================================
+   3. DREAM HEADER / NAVIGATION
+======================================== */
 
 .dream-header {
     position: relative;
     z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     width: calc(100% - 52px);
     min-height: 80px;
     margin: 23px auto 0;
     padding: 0 48px;
     box-sizing: border-box;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     border: 1px solid rgba(255,255,255,0.9);
     border-radius: 50px;
+
     background: rgba(255,255,255,0.42);
     backdrop-filter: blur(15px);
+
     box-shadow: 0 5px 20px rgba(216, 92, 147, 0.12);
 }
+
+/* LOGO */
 
 .dream-logo {
     color: #c83f79;
@@ -123,9 +110,11 @@
 }
 
 .dream-logo span {
-    font-size: 30px;
     margin-right: 8px;
+    font-size: 30px;
 }
+
+/* NAVIGATION MENU */
 
 .dream-nav {
     display: flex;
@@ -136,10 +125,12 @@
 .dream-nav a {
     position: relative;
     padding: 12px 0;
+
     color: #a74a73;
     text-decoration: none;
     font-size: 19px;
     font-weight: 500;
+
     transition: 0.3s;
 }
 
@@ -151,46 +142,75 @@
 .dream-nav a.active::after {
     content: "";
     position: absolute;
+    left: 0;
+    bottom: 0;
+
     width: 100%;
     height: 3px;
+
     background: #e85b98;
     border-radius: 10px;
-    bottom: 0;
-    left: 0;
 }
+
+/* LOGIN BUTTON */
 
 .dream-login {
     padding: 12px 29px;
+
     border: 1px solid #ed91b9;
     border-radius: 40px;
+
     background: linear-gradient(135deg, #f7b1ce, #e879a7);
     color: white;
+
     text-decoration: none;
     font-size: 17px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(215, 91, 145, 0.2);
     white-space: nowrap;
+
+    box-shadow: 0 4px 12px rgba(215, 91, 145, 0.2);
 }
 
-/* MAIN BACKGROUND */
+
+/* ========================================
+   4. MAIN CONTENT
+======================================== */
+
+/* Default layout for list pages */
 
 .dream-main {
-    min-height: calc(100vh - 110px);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 90px 20px 70px;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    padding: 55px 20px 70px;
     box-sizing: border-box;
+
+    position: relative;
     overflow: hidden;
 }
+
+/* Special layout for Add Cashier page */
+
+.add-cashier-page .dream-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: calc(100vh - 110px);
+    padding: 60px 20px;
+}
+
+/* Background Decorations */
 
 .dream-main::before,
 .dream-main::after {
     content: "";
     position: absolute;
+
     width: 800px;
     height: 300px;
+
     border-radius: 50%;
     transform: rotate(-15deg);
     pointer-events: none;
@@ -208,11 +228,15 @@
     background: rgba(255,255,255,0.32);
 }
 
-/* DECORATIVE STARS */
+
+/* ========================================
+   5. DECORATIVE STARS
+======================================== */
 
 .dream-star {
     position: absolute;
     z-index: 1;
+
     color: #fff;
     text-shadow: 0 0 12px #ed91b9;
     pointer-events: none;
@@ -254,33 +278,45 @@
     font-size: 38px;
 }
 
-/* FORM CARD */
+
+/* ========================================
+   6. ADD CASHIER FORM CARD
+======================================== */
 
 .dream-form-card {
-    width: 100%;
-    max-width: 820px;
-    box-sizing: border-box;
     position: relative;
     z-index: 2;
 
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
     padding: 70px 58px 45px;
+    box-sizing: border-box;
+
     border: 2px solid rgba(255, 153, 192, 0.8);
     border-radius: 38px;
 
     background: rgba(255, 250, 251, 0.88);
+
     box-shadow:
         0 15px 35px rgba(211, 93, 145, 0.17),
         inset 0 0 30px rgba(255, 215, 230, 0.4);
 }
 
+/* Inner Border */
+
 .dream-form-card::before {
     content: "";
     position: absolute;
     inset: 12px;
+
     border: 2px solid #f7a5c5;
     border-radius: 27px;
+
     pointer-events: none;
 }
+
+/* Top Decoration */
 
 .dream-form-card::after {
     content: "✧";
@@ -288,18 +324,25 @@
     top: -48px;
     left: 50%;
     transform: translateX(-50%);
-    width: 112px;
-    height: 112px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+
+    width: 112px;
+    height: 112px;
+
     border: 3px solid white;
+    border-radius: 50%;
+
     background: linear-gradient(145deg, #f9bfd5, #e879a7);
     color: white;
     font-size: 65px;
+
     box-shadow: 0 5px 20px rgba(211, 93, 145, 0.25);
 }
+
+/* Shopping Emblem */
 
 .dream-emblem {
     position: absolute;
@@ -307,17 +350,26 @@
     top: -28px;
     left: 50%;
     transform: translateX(-50%);
+
     font-size: 43px;
 }
+
+
+/* ========================================
+   7. FORM ORNAMENTS
+======================================== */
 
 .dream-ornament {
     position: absolute;
     left: 0;
+
     width: 100%;
+
     text-align: center;
     color: #f18bb5;
     font-size: 38px;
     letter-spacing: 12px;
+
     pointer-events: none;
 }
 
@@ -329,34 +381,16 @@
     bottom: 0;
 }
 
-/* TITLE */
-
-.dream-form-card h1 {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    text-align: center;
-    color: #a9376b;
-    font-family: Georgia, serif;
-    font-size: 48px;
-    font-weight: bold;
-}
-
-.dream-subtitle {
-    position: relative;
-    z-index: 2;
-    margin: 10px 0 18px;
-    text-align: center;
-    color: #c27698;
-    font-size: 23px;
-}
+/* Divider */
 
 .dream-divider {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
+
     margin: 0 auto 24px;
+
     color: #e879a7;
     font-size: 27px;
 }
@@ -367,11 +401,49 @@
     background: #f4b2cc;
 }
 
-/* FORM INPUTS */
+.bottom-divider {
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   8. FORM TITLE
+======================================== */
+
+.dream-form-card h1 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    color: #a9376b;
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dream-subtitle {
+    position: relative;
+    z-index: 2;
+
+    margin: 10px 0 18px;
+
+    color: #c27698;
+    font-size: 23px;
+    text-align: center;
+}
+
+
+/* ========================================
+   9. FORM INPUT FIELDS
+======================================== */
 
 .dream-form {
     position: relative;
     z-index: 2;
+
     display: flex !important;
     flex-direction: column !important;
     gap: 27px;
@@ -389,25 +461,33 @@
     font-weight: 650;
 }
 
+/* Input Container */
+
 .dream-input {
     display: flex;
     align-items: center;
+
     width: 100%;
     min-height: 65px;
-    box-sizing: border-box;
     padding: 0 20px;
+    box-sizing: border-box;
 
     border: 1.5px solid #edb4ca;
     border-radius: 20px;
+
     background: rgba(255, 248, 251, 0.8);
+
     transition: 0.3s;
 }
 
 .dream-input:focus-within {
     border-color: #e879a7;
-    box-shadow: 0 0 12px rgba(232, 121, 167, 0.2);
     background: white;
+
+    box-shadow: 0 0 12px rgba(232, 121, 167, 0.2);
 }
+
+/* Input Icons */
 
 .input-icon {
     margin-right: 15px;
@@ -415,15 +495,21 @@
     font-size: 29px;
 }
 
+/* Input Text */
+
 .dream-input input {
     flex: 1;
+
     width: 100%;
     min-width: 0;
     padding: 12px 0;
+
     border: none !important;
     outline: none !important;
+
     background: transparent !important;
     color: #a9376b;
+
     font-family: inherit;
     font-size: 19px;
 }
@@ -432,10 +518,14 @@
     color: #cb91aa;
 }
 
-/* SUBMIT BUTTON */
+
+/* ========================================
+   10. SUBMIT BUTTON
+======================================== */
 
 .dream-submit {
     position: relative;
+
     display: flex !important;
     align-items: center;
     justify-content: center;
@@ -444,14 +534,17 @@
     width: 88% !important;
     min-height: 70px;
     margin: 4px auto 0;
+
     border: 2px solid #f28bb4;
     border-radius: 50px;
 
     background: linear-gradient(120deg, #f5a0c2, #e66c9e);
     color: white;
+
     font-family: inherit;
     font-size: 23px;
     font-weight: 650;
+
     cursor: pointer;
 
     box-shadow:
@@ -463,7 +556,9 @@
 
 .dream-submit:hover {
     transform: translateY(-3px);
+
     background: linear-gradient(120deg, #ed85ae, #d9538c);
+
     box-shadow: 0 10px 22px rgba(213, 91, 145, 0.32);
 }
 
@@ -473,132 +568,37 @@
 }
 
 .button-star {
-    font-size: 24px;
     color: #fff3f8;
-}
-
-.bottom-divider {
-    margin-top: 25px;
-    margin-bottom: 0;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-    .dream-header {
-        padding: 15px 25px;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .dream-nav {
-        gap: 20px;
-    }
-
-    .dream-nav a {
-        font-size: 16px;
-    }
-
-    .dream-form-card h1 {
-        font-size: 38px;
-    }
-}
-
-@media (max-width: 600px) {
-    .dream-header {
-        width: calc(100% - 24px);
-        margin-top: 12px;
-        border-radius: 22px;
-        justify-content: center;
-    }
-
-    .dream-logo {
-        font-size: 24px;
-    }
-
-    .dream-nav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .dream-nav a {
-        font-size: 14px;
-    }
-
-    .dream-main {
-        padding: 75px 12px 40px;
-    }
-
-    .dream-form-card {
-        padding: 65px 25px 35px;
-        border-radius: 27px;
-    }
-
-    .dream-form-card h1 {
-        font-size: 30px;
-    }
-
-    .dream-subtitle {
-        font-size: 16px;
-    }
-
-    .dream-field label {
-        font-size: 17px;
-    }
-
-    .dream-input {
-        min-height: 56px;
-        border-radius: 14px;
-    }
-
-    .dream-input input {
-        font-size: 14px;
-    }
-
-    .dream-submit {
-        width: 100% !important;
-        min-height: 58px;
-        font-size: 17px;
-    }
-
-    .dream-emblem {
-        font-size: 35px;
-    }
+    font-size: 24px;
 }
 
 
 /* ========================================
-   HALAMAN DAFTAR KASIR
+   11. CASHIER LIST PAGE
 ======================================== */
 
-.dream-main {
-    display: block !important;
-    width: 100%;
-    min-height: 100vh;
-    padding: 55px 20px 70px;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-}
-
-/* CONTAINER 1: JUDUL */
+/* Title Container */
 
 .list-title-card {
     display: block !important;
+
     position: relative;
     z-index: 2;
+
     width: 90%;
     max-width: 750px;
     min-height: 250px;
+
     margin: 0 auto 35px;
     padding: 65px 25px 35px;
     box-sizing: border-box;
+
     text-align: center;
+
     background: rgba(255, 250, 251, 0.9);
     border: 2px solid #ffd1e2;
     border-radius: 30px;
+
     box-shadow: 0 8px 25px rgba(220, 100, 150, 0.15);
 }
 
@@ -610,6 +610,7 @@
 
 .list-title-card h1 {
     margin: 15px 0;
+
     color: #b83d79;
     font-family: Georgia, serif;
     font-size: 38px;
@@ -618,56 +619,73 @@
 
 .list-title-card .dream-subtitle {
     margin: 10px 0;
+
     color: #d477a3;
     font-size: 20px;
     text-align: center;
 }
 
-/* CONTAINER 2: TABEL */
+
+/* Table Container */
 
 .list-table-card {
     display: block !important;
+
     position: relative;
     z-index: 2;
+
     width: 90%;
     max-width: 1100px;
+
     margin: 0 auto;
     padding: 30px;
     box-sizing: border-box;
+
     background: rgba(255, 250, 251, 0.92);
     border: 2px solid #ffd1e2;
     border-radius: 25px;
+
     box-shadow: 0 8px 25px rgba(220, 100, 150, 0.15);
 }
 
-/* HEADER TABEL */
+
+/* ========================================
+   12. TABLE HEADER AND BUTTONS
+======================================== */
 
 .list-table-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 15px;
+
     margin-bottom: 25px;
 }
 
 .list-table-header h2 {
     margin: 0;
+
     color: #b83d79;
     font-family: Georgia, serif;
     font-size: 24px;
 }
 
-/* TOMBOL ADD */
+/* Add Button */
 
 .btn-add {
     display: inline-block;
+
     padding: 11px 22px;
     border-radius: 30px;
+
     background: linear-gradient(135deg, #f49ac2, #dc5798);
     color: white;
+
     text-decoration: none;
     font-weight: bold;
+
     box-shadow: 0 5px 15px rgba(220, 87, 152, 0.2);
+
     transition: 0.3s;
 }
 
@@ -675,12 +693,17 @@
     transform: translateY(-3px);
 }
 
-/* TABEL */
+
+/* ========================================
+   13. TABLE DESIGN
+======================================== */
 
 .list-table-card .table-container {
     display: block;
+
     width: 100%;
     max-width: 100%;
+
     overflow-x: auto;
     border-radius: 12px;
 }
@@ -688,6 +711,7 @@
 .list-table-card .styled-table {
     width: 100%;
     min-width: 600px;
+
     border-collapse: collapse;
     font-size: 15px;
 }
@@ -716,20 +740,160 @@
     background: #ffe2ee;
 }
 
-/* TOMBOL EDIT */
+/* Edit Button */
 
 .list-table-card .btn-warning {
     display: inline-block;
+
     padding: 8px 16px;
     border-radius: 8px;
+
     background: #e978aa;
     color: white;
     text-decoration: none;
 }
 
-/* RESPONSIVE */
+
+/* ========================================
+   14. RESPONSIVE DESIGN - TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-menu ul {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .dream-header {
+        padding: 15px 25px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .dream-nav {
+        gap: 20px;
+    }
+
+    .dream-nav a {
+        font-size: 16px;
+    }
+
+    .dream-form-card h1 {
+        font-size: 38px;
+    }
+}
+
+
+/* ========================================
+   15. RESPONSIVE DESIGN - MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    /* General Header */
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Dream Header */
+
+    .dream-header {
+        width: calc(100% - 24px);
+        margin-top: 12px;
+
+        border-radius: 22px;
+        justify-content: center;
+    }
+
+    .dream-logo {
+        font-size: 24px;
+    }
+
+    .dream-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .dream-nav a {
+        font-size: 14px;
+    }
+
+    /* Main Content */
+
+    .dream-main {
+        padding: 75px 12px 40px;
+    }
+
+    .add-cashier-page .dream-main {
+        padding: 75px 12px 40px;
+    }
+
+    /* Form Card */
+
+    .dream-form-card {
+        padding: 65px 25px 35px;
+        border-radius: 27px;
+    }
+
+    .dream-form-card h1 {
+        font-size: 30px;
+    }
+
+    .dream-subtitle {
+        font-size: 16px;
+    }
+
+    /* Form Fields */
+
+    .dream-field label {
+        font-size: 17px;
+    }
+
+    .dream-input {
+        min-height: 56px;
+        border-radius: 14px;
+    }
+
+    .dream-input input {
+        font-size: 14px;
+    }
+
+    /* Submit Button */
+
+    .dream-submit {
+        width: 100% !important;
+        min-height: 58px;
+        font-size: 17px;
+    }
+
+    .dream-emblem {
+        font-size: 35px;
+    }
+}
+
+
+/* ========================================
+   16. RESPONSIVE DESIGN - SMALL TABLET
+======================================== */
 
 @media (max-width: 768px) {
+
     .list-title-card,
     .list-table-card {
         width: 100%;
@@ -748,4 +912,3 @@
         align-items: flex-start;
     }
 }
-
